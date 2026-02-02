@@ -1,5 +1,5 @@
-````md
 # Gold Per Gram Overlay (Myntra) 🪙✨
+
 A Chrome Extension that shows **Gold price per gram** on Myntra gold listings, compares it with your **spot price (22K / 24K)**, and highlights **DEAL / SKIP** instantly.
 
 > ⚡ Built for quickly spotting good gold coin deals without opening each product.
@@ -10,8 +10,7 @@ A Chrome Extension that shows **Gold price per gram** on Myntra gold listings, c
 
 ### ✅ Per-gram price overlay (Listing Page)
 - Automatically detects **weight in grams** from the listing (supports: `g`, `gm`, `grams`, `Gms`)
-- Calculates:
-  - **Per gram price = Listing price / Weight**
+- Calculates: **Per gram price = Listing price / Weight**
 - Shows a clean overlay on each product card
 
 ### ✅ Spot price comparison (Manual)
@@ -42,7 +41,7 @@ A Chrome Extension that shows **Gold price per gram** on Myntra gold listings, c
 ## 🛍 Supported Pages
 
 | Site | Page Type | Status |
-|------|----------|--------|
+|------|-----------|--------|
 | Myntra | Gold Coin Listing (`/gold-coin`) | ✅ Supported |
 | Myntra | Product Page (`/buy`) | ✅ Supported |
 | Ajio | Listing + PDP | 🚧 Coming soon |
@@ -53,13 +52,13 @@ A Chrome Extension that shows **Gold price per gram** on Myntra gold listings, c
 
 You are browsing Myntra Gold Coins and want to know:
 - What is the **actual price per gram**?
-- Is it cheaper than today’s **spot price**?
+- Is it cheaper than today's **spot price**?
 - Which listing is the best deal?
 
 This extension makes it instant:
-- You’ll see **₹/g** on every listing card
-- You’ll see **DEAL** or **SKIP** immediately
-- You don’t need to open every product
+- You'll see **₹/g** on every listing card
+- You'll see **DEAL** or **SKIP** immediately
+- You don't need to open every product
 
 ---
 
@@ -69,15 +68,13 @@ Add your screenshots inside a folder called `screenshots/`
 
 Example:
 
-```md
+```markdown
 ![Compact Pill](./screenshots/compact.png)
 ![Expanded Hover](./screenshots/expanded.png)
 ![Deal Highlight](./screenshots/deal.png)
 ![Skip Highlight](./screenshots/skip.png)
 ![Config](./screenshots/config.png)
-````
-
----
+```
 
 ## ⚙️ Installation (Chrome Developer Mode)
 
