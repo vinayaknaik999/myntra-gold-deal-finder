@@ -70,13 +70,13 @@ Add your screenshots inside a folder called `screenshots/`
 
 Example:
 
-```markdown
+
 ![Myntra Listing](./screenshots/myntra-listing.png)
 ![Myntra PDP](./screenshots/myntra-pdp.png)
 ![Ajio Listing](./screenshots/ajio-listing.png)
 ![Ajio PDP](./screenshots/ajio-pdp.png)
 ![Popup Settings](./screenshots/popup.png)
-````
+
 
 ---
 
