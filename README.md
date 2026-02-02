@@ -1,4 +1,3 @@
-````md
 # Gold Per Gram Overlay (Myntra + Ajio) 🪙✨
 
 A Chrome Extension that shows **Gold price per gram (₹/g)** on **Myntra + Ajio** gold listings, compares it with your **spot price (22K / 24K)**, and highlights **DEAL / SKIP** instantly.
