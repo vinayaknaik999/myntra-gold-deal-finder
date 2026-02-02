@@ -1,6 +1,7 @@
-# Gold Per Gram Overlay (Myntra) 🪙✨
+````md
+# Gold Per Gram Overlay (Myntra + Ajio) 🪙✨
 
-A Chrome Extension that shows **Gold price per gram** on Myntra gold listings, compares it with your **spot price (22K / 24K)**, and highlights **DEAL / SKIP** instantly.
+A Chrome Extension that shows **Gold price per gram (₹/g)** on **Myntra + Ajio** gold listings, compares it with your **spot price (22K / 24K)**, and highlights **DEAL / SKIP** instantly.
 
 > ⚡ Built for quickly spotting good gold coin deals without opening each product.
 
@@ -9,7 +10,8 @@ A Chrome Extension that shows **Gold price per gram** on Myntra gold listings, c
 ## 🔥 Features
 
 ### ✅ Per-gram price overlay (Listing Page)
-- Automatically detects **weight in grams** from the listing (supports: `g`, `gm`, `grams`, `Gms`)
+- Automatically detects **weight in grams** from the listing
+  (supports: `g`, `gm`, `grams`, `Gms`)
 - Calculates: **Per gram price = Listing price / Weight**
 - Shows a clean overlay on each product card
 
@@ -40,17 +42,18 @@ A Chrome Extension that shows **Gold price per gram** on Myntra gold listings, c
 
 ## 🛍 Supported Pages
 
-| Site | Page Type | Status |
-|------|-----------|--------|
+| Site  | Page Type | Status |
+|------|----------|--------|
 | Myntra | Gold Coin Listing (`/gold-coin`) | ✅ Supported |
 | Myntra | Product Page (`/buy`) | ✅ Supported |
-| Ajio | Listing + PDP | 🚧 Coming soon |
+| Ajio | Search / Listing Page (`/search/?text=Gold%20Coins`) | ✅ Supported |
+| Ajio | Product Page (`/p/`) | ✅ Supported |
 
 ---
 
 ## 📌 Example Use Case
 
-You are browsing Myntra Gold Coins and want to know:
+You are browsing gold coins and want to know:
 - What is the **actual price per gram**?
 - Is it cheaper than today's **spot price**?
 - Which listing is the best deal?
@@ -69,12 +72,14 @@ Add your screenshots inside a folder called `screenshots/`
 Example:
 
 ```markdown
-![Compact Pill](./screenshots/compact.png)
-![Expanded Hover](./screenshots/expanded.png)
-![Deal Highlight](./screenshots/deal.png)
-![Skip Highlight](./screenshots/skip.png)
-![Config](./screenshots/config.png)
-```
+![Myntra Listing](./screenshots/myntra-listing.png)
+![Myntra PDP](./screenshots/myntra-pdp.png)
+![Ajio Listing](./screenshots/ajio-listing.png)
+![Ajio PDP](./screenshots/ajio-pdp.png)
+![Popup Settings](./screenshots/popup.png)
+````
+
+---
 
 ## ⚙️ Installation (Chrome Developer Mode)
 
@@ -96,11 +101,15 @@ cd <your-repo-name>
 3. Click **Load unpacked**
 4. Select the project folder
 
-### 3) Open Myntra Gold Coins Page
+### 3) Open Supported Pages
 
-Example:
+#### Myntra
 
 * [https://www.myntra.com/gold-coin](https://www.myntra.com/gold-coin)
+
+#### Ajio
+
+* [https://www.ajio.com/search/?text=Gold%20Coins](https://www.ajio.com/search/?text=Gold%20Coins)
 
 ---
 
@@ -119,24 +128,29 @@ Click the extension icon (popup) and set:
 
 ## 🧠 How It Works (Internals)
 
-On Myntra gold listing pages, the extension:
+On Myntra/Ajio gold listing pages, the extension:
 
 1. Reads the product **price**
+
 2. Extracts **weight in grams** using regex:
 
    ```js
    const GRAMS_RE = /(\d+(?:\.\d+)?)\s*(g|gm|grams|Gms)\b/i;
    ```
+
 3. Computes:
 
    ```
    perGram = price / grams
    ```
+
 4. Detects purity (22K / 24K) if available
+
 5. Compares with your spot price reference:
 
    * If `perGram <= spot` → DEAL
    * Else → SKIP
+
 6. Displays:
 
    * per gram price
@@ -149,11 +163,11 @@ On Myntra gold listing pages, the extension:
 
 ## ✅ Accuracy Notes
 
-* Myntra listings may not always contain weight clearly.
+* Myntra/Ajio listings may not always contain weight clearly.
 * The extension tries to extract grams from:
 
   * Product title text
-  * Brand/product metadata
+  * Product metadata
   * Image alt/title text
 
 If grams are not detected:
@@ -167,7 +181,7 @@ If grams are not detected:
 
 This extension:
 
-* is **NOT affiliated with Myntra**
+* is **NOT affiliated with Myntra or Ajio**
 * does **NOT** change checkout pricing
 * uses **only visible page content** in your browser
 * spot rates are **manual**, so always verify from your preferred source
@@ -180,8 +194,8 @@ Use at your own discretion.
 
 * Chrome Extension **Manifest V3**
 * Vanilla JavaScript
-* Chrome Storage Sync API
-* MutationObserver (handles Myntra dynamic UI)
+* Chrome Storage API
+* MutationObserver (handles dynamic UI)
 * Glass UI via CSS (`backdrop-filter`)
 
 ---
@@ -209,13 +223,16 @@ Use at your own discretion.
 ### Reload after changes
 
 1. Update code (`content.js` / `styles.css`)
+
 2. Open:
 
    ```
    chrome://extensions
    ```
+
 3. Click **Reload**
-4. Hard refresh Myntra:
+
+4. Hard refresh the site:
 
    * Windows/Linux: `Ctrl + Shift + R`
    * Mac: `Cmd + Shift + R`
@@ -224,7 +241,6 @@ Use at your own discretion.
 
 ## 🗺 Roadmap / Future Improvements
 
-* [ ] Add Ajio support
 * [ ] Desktop notification when a new DEAL appears
 * [ ] Sort/highlight best per-gram deal automatically
 * [ ] Track price history (local storage)
@@ -240,21 +256,25 @@ PRs are welcome!
 Steps:
 
 1. Fork this repo
+
 2. Create a branch:
 
    ```bash
    git checkout -b feature/my-change
    ```
+
 3. Commit changes:
 
    ```bash
    git commit -m "Add new feature"
    ```
+
 4. Push:
 
    ```bash
    git push origin feature/my-change
    ```
+
 5. Open a Pull Request
 
 ---
@@ -266,5 +286,4 @@ If you find this useful:
 * ⭐ Star the repo
 * Share it with friends who track gold coin deals 🙂
 
-```
 ```
