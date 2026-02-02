@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Gold Price Settings</title>
+    <style>
+      body { font-family: system-ui, Arial; padding: 16px; max-width: 520px; }
+      .row { display: flex; gap: 12px; margin: 10px 0; align-items: center; }
+      label { width: 180px; }
+      input { flex: 1; padding: 8px; }
+      button { padding: 10px 14px; cursor: pointer; }
+      .hint { color: #555; font-size: 12px; margin-top: 6px; }
+      .ok { color: #0a7; margin-top: 10px; }
+    </style>
+  </head>
+  <body>
+    <h2>Gold Price Settings</h2>
+
+    <div class="row">
+      <label for="price24">24K price (₹/gram)</label>
+      <input id="price24" type="number" step="0.01" placeholder="e.g. 6800" />
+    </div>
+
+    <div class="row">
+      <label for="price22">22K price (₹/gram)</label>
+      <input id="price22" type="number" step="0.01" placeholder="e.g. 6230" />
+    </div>
+
+    <div class="row">
+      <label for="assumeKarat">Assume listing karat</label>
+      <select id="assumeKarat" style="flex:1; padding:8px;">
+        <option value="auto">Auto-detect (if text shows 22K/24K)</option>
+        <option value="22">Assume 22K</option>
+        <option value="24">Assume 24K</option>
+      </select>
+    </div>
+
+    <button id="save">Save</button>
+    <div class="hint">
+      Tip: If a listing doesn’t show weight on the tile, open the product page or tweak selectors in content.js.
+    </div>
+    <div id="status" class="ok"></div>
+
+    <script src="options.js"></script>
+  </body>
+</html>

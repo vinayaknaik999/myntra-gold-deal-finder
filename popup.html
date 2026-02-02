@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Gold Overlay</title>
+    <style>
+      body { font-family: system-ui, Arial; margin: 0; padding: 12px; width: 320px; }
+      h3 { margin: 0 0 10px; font-size: 14px; }
+      .row { display: flex; gap: 10px; align-items: center; margin: 8px 0; }
+      label { width: 120px; font-size: 12px; color: #333; }
+      input, select { flex: 1; padding: 7px; font-size: 12px; }
+      .btnrow { display: flex; gap: 8px; margin-top: 10px; }
+      button { flex: 1; padding: 9px 10px; font-size: 12px; cursor: pointer; }
+      .hint { font-size: 11px; color: #555; margin-top: 8px; }
+      .status { font-size: 11px; color: #0a7; margin-top: 8px; min-height: 16px; }
+      .toggle { display: flex; align-items: center; gap: 10px; margin: 8px 0; }
+      .toggle input { width: auto; }
+      hr { border: 0; border-top: 1px solid #eee; margin: 10px 0; }
+    </style>
+  </head>
+  <body>
+    <h3>Gold Overlay Settings</h3>
+
+    <div class="row">
+      <label for="gold24">24K ₹/g</label>
+      <input id="gold24" type="number" step="0.01" placeholder="e.g. 6800" />
+    </div>
+
+    <div class="row">
+      <label for="gold22">22K ₹/g</label>
+      <input id="gold22" type="number" step="0.01" placeholder="e.g. 6230" />
+    </div>
+
+    <div class="row">
+      <label for="assumeKarat">Assume karat</label>
+      <select id="assumeKarat">
+        <option value="auto">Auto-detect</option>
+        <option value="22">Assume 22K</option>
+        <option value="24">Assume 24K</option>
+      </select>
+    </div>
+
+    <hr/>
+
+    <div class="toggle">
+      <input id="autoRefreshEnabled" type="checkbox" />
+      <label for="autoRefreshEnabled" style="width:auto;">Auto refresh PLP</label>
+    </div>
+
+    <div class="row">
+      <label for="refreshSeconds">Refresh (sec)</label>
+      <input id="refreshSeconds" type="number" min="5" step="1" placeholder="30" />
+    </div>
+
+    <div class="btnrow">
+      <button id="save">Save</button>
+      <button id="reloadTab">Reload tab</button>
+    </div>
+
+    <div class="hint">
+      Auto refresh runs only on Myntra gold listing page (/gold-coin).
+    </div>
+    <div id="status" class="status"></div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

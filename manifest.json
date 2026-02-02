@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Gold Per Gram Overlay (Myntra + Ajio)",
+  "version": "1.1.0",
+  "description": "Shows per-gram overlays on gold listings and compares with manual 24K/22K gold rates.",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://www.myntra.com/*",
+    "https://www.ajio.com/*"
+  ],
+  "action": {
+    "default_title": "Gold Overlay Settings",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.myntra.com/*",
+        "https://www.ajio.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
