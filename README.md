@@ -9,7 +9,7 @@ A Chrome Extension that shows **Gold price per gram (₹/g)** on **Myntra + Ajio
 ✅ **Now Live on the Chrome Web Store**
 
 👉 Install here:  
-![Chrome Web Store]([https://img.shields.io/chrome-web-store/v/dnpojioglmcbhmpinlkneanobdandlpg](https://chromewebstore.google.com/detail/dnpojioglmcbhmpinlkneanobdandlpg))
+![Chrome Web Store](https://chromewebstore.google.com/detail/dnpojioglmcbhmpinlkneanobdandlpg)
 
 > Supports Myntra & Ajio gold listings. No sign-up. No tracking.
 
